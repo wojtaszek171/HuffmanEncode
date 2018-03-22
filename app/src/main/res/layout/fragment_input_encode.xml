@@ -1,0 +1,248 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pawel.huffman.InputEncodeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/encodeButton"
+            android:text="Statystyka kompresji" />
+
+        <TextView
+            android:id="@+id/label1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Kodowanie" />
+
+        <EditText
+            android:id="@+id/textToEncode"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/label1"
+            android:autoLink="all"
+            android:gravity="top|left"
+            android:hint="Wprowadź tekst"
+            android:inputType="textMultiLine|textCapSentences"
+            android:lines="5"
+            android:maxLines="10"
+            android:minLines="1"
+            android:scrollbars="none" />
+
+        <Button
+            android:id="@+id/encodeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textToEncode"
+            android:layout_centerHorizontal="true"
+            android:text="Koduj" />
+
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView2">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Entropia" />
+
+                <TextView
+                    android:id="@+id/entropia"
+                    android:layout_width="244dp"
+                    android:layout_height="wrap_content"
+                    android:text="wartość entropii" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Średnia długość słowa    " />
+
+                <TextView
+                    android:id="@+id/wordLength"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="wartość" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bitów wejściowych" />
+
+                <TextView
+                    android:id="@+id/inputBits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="wartość" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bitów wyjściowych" />
+
+                <TextView
+                    android:id="@+id/outputBits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="wartość" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bajtów wejściowych" />
+
+                <TextView
+                    android:id="@+id/inputBytes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="wartość" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bajtów wyjściowych" />
+
+                <TextView
+                    android:id="@+id/outputBytes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="wartość" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kompresja bitów" />
+
+                <TextView
+                    android:id="@+id/bitsCompression"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="wartość" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kompresja bajtów" />
+
+                <TextView
+                    android:id="@+id/bytesCompression"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="wartość" />
+            </TableRow>
+        </TableLayout>
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/table">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textLabel"
+                android:text="Text: "/>
+
+            <TextView
+                android:id="@+id/inputText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textLabel"
+                android:layout_alignBottom="@+id/textLabel"
+                android:layout_toEndOf="@+id/textLabel"
+                android:layout_toRightOf="@+id/textLabel" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rel2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/encodedLabel"
+                android:text="Encoded: "/>
+
+            <TextView
+                android:id="@+id/encodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/encodedLabel"
+                android:layout_alignBottom="@+id/encodedLabel"
+                android:layout_toEndOf="@+id/encodedLabel"
+                android:layout_toRightOf="@+id/encodedLabel" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/rel2"
+            />
+
+    </RelativeLayout>
+    </ScrollView>
+
+
+</FrameLayout>
