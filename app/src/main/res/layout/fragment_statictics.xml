@@ -5,9 +5,71 @@
     tools:context="com.example.pawel.huffman.StaticticsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.25"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Znak"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="ASCII"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.75"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Prawdopodobieństwo"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.25"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Ilość"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.25"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Kod"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+            <ListView
+                android:id="@+id/list_chars"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:layout_below="@id/relativeLayout1"
+                android:layout_marginBottom="60dp"></ListView>
+    </RelativeLayout>
+
 
 </FrameLayout>

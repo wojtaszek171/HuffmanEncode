@@ -90,25 +90,63 @@ public class InputEncodeFragment extends Fragment {
         EditText textField = view.findViewById(R.id.textToEncode);
         TextView rawText = view.findViewById(R.id.inputText);
         TextView encodedText = view.findViewById(R.id.encodedText);
+        TextView entropia = view.findViewById(R.id.entropia);
+        TextView wordLengthText = view.findViewById(R.id.wordLength);
+        TextView inBit = view.findViewById(R.id.inputBits);
+        TextView inByte = view.findViewById(R.id.inputBytes);
+        TextView outBit = view.findViewById(R.id.outputBits);
+        TextView outByte = view.findViewById(R.id.outputBytes);
+        TextView bitCompress = view.findViewById(R.id.bitsCompression);
+        TextView byteCompress = view.findViewById(R.id.bytesCompression);
+
         charsData = new HashMap<String,HashMap>();
         Bundle bundle = getArguments();
-        if(bundle!=null) {
+        if(bundle.getString("text")!=null) {
             //charsData = (HashMap) bundle.getSerializable("data");
             textField.setText(bundle.getString("text"));
             rawText.setText(bundle.getString("text"));
             encodedText.setText(bundle.getString("encoded"));
+            entropia.setText(bundle.getString("entropy"));
+            wordLengthText.setText(bundle.getString("avgWord"));
+            inByte.setText(Integer.toString(bundle.getString("text").length()));
+            inBit.setText(Integer.toString(bundle.getString("text").length()*8));
+            outBit.setText(Integer.toString(bundle.getString("encoded").length()));
+            Integer outByteValue = bundle.getString("encoded").length()/8;
+            if(bundle.getString("encoded").length()%8!=0)
+                outByteValue+=1;
+            outByte.setText(Integer.toString(outByteValue));
+            Double bitCom = 1 - Double.valueOf(bundle.getString("encoded").length()) / Double.valueOf(bundle.getString("text").length()*8);
+            Double byteCom = 1 - Double.valueOf(outByteValue)/Double.valueOf(bundle.getString("text").length());
+            bitCompress.setText(Double.toString(bitCom*100) + "%");
+            byteCompress.setText(Double.toString(byteCom*100) + "%");
+
+
         }
         encodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String textNew = textField.getText().toString();
                 handleNewText(textNew);
-                rawText.setText(text);
-                encodedText.setText(encoded);
                 Intent intent = new Intent(getActivity().getApplicationContext(), MainActivity.class);
+
+                Double IntervalSum = 0.0;
+                Double avgWordLength = 0.0;
+//                for(int i=0; i<text.length();i++){
+//                    Double val = Double.parseDouble((charsData.get("" + text.charAt(i))).get("interval").toString());
+//                    IntervalSum += val * Math.log(1/val)/Math.log(2);
+//                }
+                for ( String key : charsData.keySet() ) {
+                    Double val = Double.parseDouble((charsData.get(key)).get("interval").toString());
+                    Integer wordLength = ((charsData.get(key)).get("code").toString()).length();
+                    IntervalSum += val * Math.log(1/val)/Math.log(2);
+                    avgWordLength += val * wordLength;
+                }
+
                 intent.putExtra("data", (Serializable) charsData);
                 intent.putExtra("text", text);
                 intent.putExtra("encoded", encoded);
+                intent.putExtra("entropy", IntervalSum.toString());
+                intent.putExtra("avgWord", avgWordLength.toString());
                 startActivity(intent);
                 getActivity().finish();
             }

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.HashMap;
@@ -34,6 +35,8 @@ public class StaticticsFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     static Map<String,HashMap> charsData;
+    StatisticsAdapter friendsAdapter;
+    private ListView listTable;
 
     public StaticticsFragment() {
         // Required empty public constructor
@@ -69,13 +72,18 @@ public class StaticticsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_statictics, container, false);
         charsData = new HashMap<String,HashMap>();
         Bundle bundle = getArguments();
-        if(bundle!=null)
-            charsData =(HashMap) bundle.getSerializable("data");
+        if(bundle!=null) {
+            charsData = (HashMap) bundle.getSerializable("data");
 
+            friendsAdapter = new StatisticsAdapter(view.getContext(), (HashMap<String, HashMap>) charsData);
+            listTable =(ListView) view.findViewById(R.id.list_chars);
+            listTable.setAdapter(friendsAdapter);
+        }
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_statictics, container, false);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

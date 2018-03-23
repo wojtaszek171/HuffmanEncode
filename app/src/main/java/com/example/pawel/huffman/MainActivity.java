@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     public static HashMap data;
     public static String text;
     public static String encoded;
+    public static String entropy;
+    public static String avgWord;
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +36,16 @@ public class MainActivity extends AppCompatActivity {
             data = hashMap;
             text = intent.getStringExtra("text");
             encoded = intent.getStringExtra("encoded");
+            entropy = intent.getStringExtra("entropy");
+            avgWord = intent.getStringExtra("avgWord");
         }
         Bundle bundle = new Bundle();
         if(data!=null){
             bundle.putSerializable("data",data);
             bundle.putString("text",text);
             bundle.putString("encoded",encoded);
+            bundle.putString("entropy",entropy);
+            bundle.putString("avgWord",avgWord);
         }
         mTextMessage = (TextView) findViewById(R.id.message);
         FragmentManager fragmentManager = getSupportFragmentManager();
