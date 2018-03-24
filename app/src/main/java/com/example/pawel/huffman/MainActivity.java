@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -68,16 +69,22 @@ public class MainActivity extends AppCompatActivity {
                         transaction.commit();
                         break;
                     case R.id.navigation_dashboard:
-                        StaticticsFragment fragment2 = new StaticticsFragment();
-                        fragment2.setArguments(bundle);
-                        transaction.replace(R.id.content,fragment2);
-                        transaction.commit();
+                        if(data!=null) {
+                            StaticticsFragment fragment2 = new StaticticsFragment();
+                            fragment2.setArguments(bundle);
+                            transaction.replace(R.id.content, fragment2);
+                            transaction.commit();
+                        }else
+                            Toast.makeText(MainActivity.this, "Zakoduj tekst!", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.navigation_notifications:
-                        TreeFragment fragment3 = new TreeFragment();
-                        fragment3.setArguments(bundle);
-                        transaction.replace(R.id.content,fragment3);
-                        transaction.commit();
+                        if(data!=null) {
+                            TreeFragment fragment3 = new TreeFragment();
+                            fragment3.setArguments(bundle);
+                            transaction.replace(R.id.content, fragment3);
+                            transaction.commit();
+                        }else
+                            Toast.makeText(MainActivity.this, "Zakoduj tekst!", Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;

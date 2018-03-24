@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.25"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="Ilość"
@@ -55,7 +55,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.25"
+                android:layout_weight="1.5"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="Kod"

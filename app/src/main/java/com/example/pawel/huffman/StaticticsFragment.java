@@ -77,8 +77,14 @@ public class StaticticsFragment extends Fragment {
         Bundle bundle = getArguments();
         if(bundle!=null) {
             charsData = (HashMap) bundle.getSerializable("data");
-
-            friendsAdapter = new StatisticsAdapter(view.getContext(), (HashMap<String, HashMap>) charsData);
+            HashMap<String,HashMap> mapFixed;
+            mapFixed = new HashMap<>();
+            for ( String key : charsData.keySet() ) {
+                if((charsData.get(key)).get("ascii")!=null){
+                    mapFixed.put(key,charsData.get(key));
+                }
+            }
+            friendsAdapter = new StatisticsAdapter(view.getContext(), (HashMap<String, HashMap>) mapFixed);
             listTable =(ListView) view.findViewById(R.id.list_chars);
             listTable.setAdapter(friendsAdapter);
         }
@@ -99,7 +105,7 @@ public class StaticticsFragment extends Fragment {
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
-            Toast.makeText(context, "Statystyki", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, "Statystyki", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -32,7 +32,7 @@
         android:id="@+id/count"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1.25"
+        android:layout_weight="1"
         android:gravity="center"
         android:text="5" />
 
@@ -40,7 +40,7 @@
         android:id="@+id/code"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1.25"
+        android:layout_weight="1.5"
         android:gravity="center"
         android:text="00" />
 </LinearLayout>

@@ -54,7 +54,7 @@ public class InputEncodeFragment extends Fragment {
     static Map<String,HashMap> charsData;
 
 
-    static int ASCII[] = new int[128];
+    static int ASCII[] = new int[100000];
 
     public InputEncodeFragment() {
         // Required empty public constructor
@@ -169,7 +169,7 @@ public class InputEncodeFragment extends Fragment {
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
-            Toast.makeText(context, "Wprowadzanie", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, "Wprowadzanie", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -198,7 +198,7 @@ public class InputEncodeFragment extends Fragment {
         System.out.println("Enter the text:");
         text = textt;
 
-        ASCII = new int[128];
+        ASCII = new int[100000];
         nodes.clear();
         codes.clear();
         encoded = "";

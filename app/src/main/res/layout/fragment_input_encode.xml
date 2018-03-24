@@ -14,21 +14,16 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/encodeButton"
-            android:text="Statystyka kompresji" />
-
-        <TextView
-            android:id="@+id/label1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="Kodowanie" />
+            android:layout_below="@+id/encodeButton"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="Statystyka kompresji"
+            android:textColor="#fff" />
+
 
         <EditText
             android:id="@+id/textToEncode"
@@ -36,7 +31,6 @@
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/label1"
             android:autoLink="all"
             android:gravity="top|left"
             android:hint="Wprowadź tekst"
@@ -70,13 +64,16 @@
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Entropia" />
+                    android:background="@color/colorPrimary"
+                    android:paddingLeft="5dp"
+                    android:text="Entropia"
+                    android:textColor="#fff" />
 
                 <TextView
                     android:id="@+id/entropia"
                     android:layout_width="244dp"
                     android:layout_height="wrap_content"
-                    android:text="wartość entropii" />
+                    android:text="" />
             </TableRow>
 
             <TableRow
@@ -87,13 +84,16 @@
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Średnia długość słowa    " />
+                    android:background="@color/colorPrimary"
+                    android:paddingLeft="5dp"
+                    android:text="Średnia długość słowa    "
+                    android:textColor="#fff" />
 
                 <TextView
                     android:id="@+id/wordLength"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="wartość" />
+                    android:text="" />
             </TableRow>
 
             <TableRow
@@ -104,13 +104,16 @@
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bitów wejściowych" />
+                    android:background="@color/colorPrimary"
+                    android:paddingLeft="5dp"
+                    android:text="Bitów wejściowych"
+                    android:textColor="#fff" />
 
                 <TextView
                     android:id="@+id/inputBits"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="wartość" />
+                    android:text="" />
             </TableRow>
 
             <TableRow
@@ -121,13 +124,16 @@
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bitów wyjściowych" />
+                    android:background="@color/colorPrimary"
+                    android:paddingLeft="5dp"
+                    android:text="Bitów wyjściowych"
+                    android:textColor="#fff" />
 
                 <TextView
                     android:id="@+id/outputBits"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="wartość" />
+                    android:text="" />
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -137,13 +143,16 @@
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bajtów wejściowych" />
+                    android:background="@color/colorPrimary"
+                    android:paddingLeft="5dp"
+                    android:text="Bajtów wejściowych"
+                    android:textColor="#fff" />
 
                 <TextView
                     android:id="@+id/inputBytes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="wartość" />
+                    android:text="" />
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -153,13 +162,16 @@
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bajtów wyjściowych" />
+                    android:background="@color/colorPrimary"
+                    android:paddingLeft="5dp"
+                    android:text="Bajtów wyjściowych"
+                    android:textColor="#fff" />
 
                 <TextView
                     android:id="@+id/outputBytes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="wartość" />
+                    android:text="" />
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -169,13 +181,16 @@
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Kompresja bitów" />
+                    android:background="@color/colorPrimary"
+                    android:paddingLeft="5dp"
+                    android:text="Kompresja bitów"
+                    android:textColor="#fff" />
 
                 <TextView
                     android:id="@+id/bitsCompression"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="wartość" />
+                    android:text="" />
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -185,13 +200,16 @@
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Kompresja bajtów" />
+                    android:background="@color/colorPrimary"
+                    android:paddingLeft="5dp"
+                    android:text="Kompresja bajtów"
+                    android:textColor="#fff" />
 
                 <TextView
                     android:id="@+id/bytesCompression"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="wartość" />
+                    android:text="" />
             </TableRow>
         </TableLayout>
         <RelativeLayout
@@ -199,40 +217,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/table">
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/textLabel"
-                android:text="Text: "/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:text="TEXT "
+                android:textColor="#fff" />
 
             <TextView
                 android:id="@+id/inputText"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/textLabel"
-                android:layout_alignBottom="@+id/textLabel"
-                android:layout_toEndOf="@+id/textLabel"
-                android:layout_toRightOf="@+id/textLabel" />
+                android:layout_below="@+id/textLabel" />
         </RelativeLayout>
+
         <RelativeLayout
             android:id="@+id/rel2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rel1">
+            android:layout_below="@id/rel1"
+>
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="#fff"
                 android:id="@+id/encodedLabel"
-                android:text="Encoded: "/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ENCODED "
+                android:gravity="center"/>
 
             <TextView
                 android:id="@+id/encodedText"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/encodedLabel"
-                android:layout_alignBottom="@+id/encodedLabel"
-                android:layout_toEndOf="@+id/encodedLabel"
-                android:layout_toRightOf="@+id/encodedLabel" />
+                android:layout_below="@+id/encodedLabel" />
         </RelativeLayout>
 
         <TextView
