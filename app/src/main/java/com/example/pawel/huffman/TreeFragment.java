@@ -38,6 +38,7 @@ public class TreeFragment extends Fragment {
     private String mParam2;
     int longest;
     int widthMin;
+    int size;
     private OnFragmentInteractionListener mListener;
     static Map<String,HashMap> charsData;
 
@@ -99,6 +100,7 @@ public class TreeFragment extends Fragment {
                 }
             }
             widthMin=0;
+            size = bundle.getString("text").length();
             for (int i=0; i<longest;i++)
                 widthMin+=(30*Math.pow(2,longest-i));
             widthMin*=2;
@@ -178,9 +180,11 @@ public class TreeFragment extends Fragment {
             canvas.drawPaint(paint);
             // Use Color.parseColor to define HTML colors
             paint.setColor(Color.parseColor("#CD5C5C"));
+            paint.setTextSize(30);
+            canvas.drawCircle(x/2-10, 100, radius, paint);
+            canvas.drawText(Integer.toString(size),x/2,155,paint);
             paint.setTextSize(40);
-            canvas.drawCircle(x/2, 100, radius, paint);
-
+            paint.setStrokeWidth(12);
             for ( String key : charsData.keySet() ) {
                 x=getWidth()/2;
                 y=100;
@@ -192,7 +196,6 @@ public class TreeFragment extends Fragment {
                         y+=70;
 
                             x+= 30*Math.pow(2,longest-i);
-
 
 
                             canvas.drawLine(oldX, oldY, x, y, paint);
@@ -229,11 +232,14 @@ public class TreeFragment extends Fragment {
                     if(i==val.length()-1){
 
                         paint.setColor(Color.parseColor("#ffffff"));
-                        if(val.charAt(i) == '0')
-                            canvas.drawText(key, x-10, y+10, paint);
-                        else
-                            canvas.drawText(key, x-10, y+10, paint);
+
+                            canvas.drawText(key, x - 10, y + 10, paint);
                         paint.setColor(Color.parseColor("#CD5C5C"));
+                            paint.setTextSize(30);
+                            canvas.drawText((charsData.get(key)).get("count").toString(),x-10,y+55,paint);
+                            paint.setTextSize(40);
+
+
                     }
 
                 }

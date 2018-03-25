@@ -147,7 +147,9 @@ public class InputEncodeFragment extends Fragment {
                 intent.putExtra("encoded", encoded);
                 intent.putExtra("entropy", IntervalSum.toString());
                 intent.putExtra("avgWord", avgWordLength.toString());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
+                getActivity().overridePendingTransition(0,0); //0 for no animation
                 getActivity().finish();
             }
         });
